@@ -1,0 +1,97 @@
+{
+    "os": "Linux-6.5.0-1014-aws-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "heartbeatAt": "2024-04-19T14:25:36.545360",
+    "startedAt": "2024-04-19T14:25:35.985991",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--node-ip-address=172.31.11.194",
+        "--node-manager-port=43095",
+        "--object-store-name=/tmp/ray/session_2024-04-19_14-25-15_570990_11581/sockets/plasma_store",
+        "--raylet-name=/tmp/ray/session_2024-04-19_14-25-15_570990_11581/sockets/raylet",
+        "--redis-address=None",
+        "--temp-dir=/tmp/ray",
+        "--metrics-agent-port=59702",
+        "--logging-rotate-bytes=536870912",
+        "--logging-rotate-backup-count=5",
+        "--gcs-address=172.31.11.194:47484",
+        "--session-name=session_2024-04-19_14-25-15_570990_11581",
+        "--temp-dir=/tmp/ray",
+        "--webui=127.0.0.1:8265",
+        "--startup-token=17",
+        "--worker-launch-time-ms=1713536729809",
+        "--runtime-env-hash=-462829640"
+    ],
+    "state": "running",
+    "program": "/home/ubuntu/Melting-Pot/.venv/lib/python3.10/site-packages/ray/_private/workers/default_worker.py",
+    "codePathLocal": null,
+    "codePath": ".venv/lib/python3.10/site-packages/ray/_private/workers/default_worker.py",
+    "git": {
+        "remote": "https://github.com/jtbandurski/Melting-Pot",
+        "commit": "38c141045ab01c95a74a32406c9ae3154e23a37e"
+    },
+    "email": null,
+    "root": "/home/ubuntu/Melting-Pot",
+    "host": "ip-172-31-11-194",
+    "username": "ubuntu",
+    "executable": "/home/ubuntu/Melting-Pot/.venv/bin/python3",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 3465.22575,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3107.928,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3596.485,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3599.885,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3599.848,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3018.753,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3600.459,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3599.777,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3598.671,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 123.86906433105469,
+            "used": 13.731719970703125
+        }
+    },
+    "memory": {
+        "total": 15.244213104248047
+    }
+}

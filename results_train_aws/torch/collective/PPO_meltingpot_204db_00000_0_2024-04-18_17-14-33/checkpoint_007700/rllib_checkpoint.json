@@ -1,0 +1,1 @@
+{"type": "Algorithm", "checkpoint_version": "1.1", "format": "cloudpickle", "state_file": "/home/ubuntu/Melting-Pot/results_train_aws/torch/collective/PPO_meltingpot_204db_00000_0_2024-04-18_17-14-33/checkpoint_007700/algorithm_state.pkl", "policy_ids": ["agent_1", "agent_0"], "ray_version": "2.6.1", "ray_commit": "d68bf04883af2e430fc3a50fd544bb7c84aff2e9"}
