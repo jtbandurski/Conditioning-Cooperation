@@ -1,0 +1,10 @@
+{
+    "env_config": {
+        "roles": [
+          "default",
+          "default"
+        ],
+        "scaled": 8,
+        "substrate": "commons_harvest__collective"
+      }
+}
