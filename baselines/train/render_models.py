@@ -16,6 +16,7 @@ def render_model(args):
   config_file = f'{args.config_dir}/params.json'
   f = open(config_file)
   configs = json.load(f)
+  configs["env_config"]["substrate"] = "commons_harvest__tragedy_test"
 
   env = make_envs.env_creator(configs["env_config"]).get_dmlab2d_env()
 
@@ -40,7 +41,6 @@ def render_model(args):
   shape = obs_spec[0]["WORLD.RGB"].shape
   game_display = pygame.display.set_mode(
       (int(shape[1] * scale), int(shape[0] * scale)))
-
   for k in range(args.horizon):
     obs = timestep.observation[0]["WORLD.RGB"]
     obs = np.transpose(obs, (1, 0, 2))
@@ -48,7 +48,6 @@ def render_model(args):
     rect = surface.get_rect()
     surf = pygame.transform.scale(surface,
                                   (int(rect[2] * scale), int(rect[3] * scale)))
-
     game_display.blit(surf, dest=(0, 0))
     pygame.display.update()
     clock.tick(fps)
