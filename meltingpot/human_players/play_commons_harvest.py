@@ -25,6 +25,7 @@ import json
 from meltingpot.configs.substrates import commons_harvest__closed
 from meltingpot.configs.substrates import commons_harvest__open
 from meltingpot.configs.substrates import commons_harvest__partnership
+from meltingpot.configs.substrates import commons_harvest__tragedy_test
 from meltingpot.human_players import level_playing_utils
 from ml_collections import config_dict
 
@@ -32,6 +33,7 @@ environment_configs = {
     'commons_harvest__closed': commons_harvest__closed,
     'commons_harvest__open': commons_harvest__open,
     'commons_harvest__partnership': commons_harvest__partnership,
+    'commons_harvest__tragedy_test': commons_harvest__tragedy_test
 }
 
 _ACTION_MAP = {
@@ -48,7 +50,7 @@ def verbose_fn(unused_env, unused_player_index, unused_current_player_index):
 def main():
   parser = argparse.ArgumentParser(description=__doc__)
   parser.add_argument(
-      '--level_name', type=str, default='commons_harvest__closed',
+      '--level_name', type=str, default='commons_harvest__tragedy_test',
       choices=environment_configs.keys(),
       help='Level name to load')
   parser.add_argument(
