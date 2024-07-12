@@ -1,3 +1,38 @@
+# Conditioning cooperation 
+
+This repository contains codebase and results used in my Master's thesis titled:
+
+Conditioning cooperation  with property rights in Multi-agent Reinforcement Learning tragedy of the commons setting
+
+This is a fork of Melting Pot Contest @ Neurips 2023 repository, which was very helpful to start raining agents.
+
+## Baselines
+
+This subdirectory contains all the configs and scripts needed to train and evaluate agents as well as test whether training scripts and augmented substrates work properly.
+
+## Evaluations
+
+This subdirectory contains evaluation scors from all simulations as well as videos generated using render model script.
+
+## Meltingpot
+
+This subdirectory contains all the necessary fiels from the Melting Pot library. This is where the new designs of the envrionments are located.
+
+## Ray pathes
+
+This subdirectory comes from the fork and is used for patching packages in order for them to work properly with Melting Pot.
+
+## Results Train AWS
+
+This subdirectory contains results of the agents from traininng as well as the trained models themselves.
+
+## Shell scripts
+
+The run multiple scripts were used to run multiple trainings and multiple evaluations at the same time.
+
+
+
+
 # Melting Pot Contest @ Neurips 2023
 Official Repository for Melting Pot Contest Experiments
 
