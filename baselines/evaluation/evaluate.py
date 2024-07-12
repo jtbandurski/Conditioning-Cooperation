@@ -4,6 +4,7 @@ import contextlib
 import json
 import pandas as pd
 import tensorflow as tf
+import os
 tf.compat.v1.disable_eager_execution()
 
 from baselines.train.configs import SUPPORTED_SCENARIOS
@@ -50,14 +51,25 @@ def run_evaluation(args):
     scenario = args.scenario
   else:
     scenario = configs['env_config']['substrate']
+
+  if args.tragedy_test:
+    scenario = "commons_harvest__tragedy_test"
+  else:
+    scenario = configs['env_config']['substrate']
+
   scaled = configs['env_config']['scaled']
 
   if args.create_videos:
-    video_dir = args.video_dir
+    video_dir = f"{args.config_dir}/videos/"
+    # if the target directory does not exist, create it
+    try:
+      os.makedirs(video_dir)
+    except FileExistsError:
+      pass
   else:
     video_dir = None
     
-  policies_path = args.policies_dir
+  policies_path = f"{args.config_dir}/policies/"
   roles = configs['env_config']['roles']
   policy_ids = [f"agent_{i}" for i in range(len(roles))]
   names_by_role = defaultdict(list)
@@ -78,6 +90,13 @@ if __name__ == "__main__":
 
   parser = argparse.ArgumentParser(description="Evaluation Script for Multi-Agent RL in Meltingpot")
   
+  # new parameter that indicates if the tragedy_test substrate is being used
+  parser.add_argument(
+      "--tragedy_test",
+      type=bool,
+      default=False,
+      help="Default tragedy_test is not used. Substrate is taken from traing checkpoint.",
+  )
   parser.add_argument(
       "--num_episodes",
       type=int,
@@ -103,11 +122,11 @@ if __name__ == "__main__":
       help="Directory where your experiment config (params.json) is located",
   )
 
-  parser.add_argument(
-      "--policies_dir",
-      type=str,
-      help="Directory where your trained polcies are located",
-  )
+  # parser.add_argument(
+  #     "--policies_dir",
+  #     type=str,
+  #     help="Directory where your trained polcies are located",
+  # )
 
   parser.add_argument(
       "--create_videos",
@@ -138,4 +157,11 @@ if __name__ == "__main__":
   print(f"Results for {scenario}: ")
   with pd.option_context('display.max_rows', None, 'display.max_columns', None):
       print(results)
+  
+  # Save the results to a csv file
+  # if the target directory does not exist, create it
+  try:
+    os.makedirs(f'{args.config_dir}/')
+  except FileExistsError:
+    results.to_csv(f'{args.config_dir}/evaluation.csv')
 
