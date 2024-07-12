@@ -1,5 +1,6 @@
 import argparse
 import os
+import datetime
 import ray
 
 
@@ -7,7 +8,7 @@ from typing import *
 from ray import air
 from ray import tune
 from configs import get_experiment_config
-from ray.rllib.algorithms import ppo
+from ray.rllib.algorithms import ppo, a3c
 from ray.tune import registry
 from ray.air.integrations.wandb import WandbLoggerCallback
 from baselines.train import make_envs
@@ -24,7 +25,7 @@ def get_cli_args():
   )
   parser.add_argument(
       "--num_gpus",
-      type=int,
+      type=float,
       default=0,
       help="Number of GPUs to run on (can be a fraction)",
   )
@@ -40,21 +41,21 @@ def get_cli_args():
   )
   parser.add_argument(
         "--algo",
-        choices=["ppo"],
+        choices=["ppo","a3c"],
         default="ppo",
         help="Algorithm to train agents.",
   )
   parser.add_argument(
         "--framework",
         choices=["tf", "torch"],
-        default="torch",
+        default="tf",
         help="The DL framework specifier (tf2 eager is not supported).",
   )
   parser.add_argument(
       "--exp",
       type=str,
-      choices = ['pd_arena','al_harvest','clean_up','territory_rooms'],
-      default="pd_arena",
+      choices = ['private','collective','tragedy_test','pd_arena','al_harvest','clean_up','territory_rooms'],
+      default="private",
       help="Name of the substrate to run",
   )
   parser.add_argument(
@@ -87,7 +88,7 @@ def get_cli_args():
         "--downsample",
         type=bool,
         default=True,
-        help="Whether to downsample substrates in MeltingPot. Defaults to 8.",
+        help="Whether to downsample substrates in MeltingPot. Defaults to dwonscaling by 8. Sprite 8x8 becomes 1x1.",
   )
 
   parser.add_argument(
@@ -106,22 +107,32 @@ if __name__ == "__main__":
 
   args = get_cli_args()
 
-  # Set up Ray. Use local mode for debugging. Ignore reinit error.
-  ray.init(local_mode=args.local, ignore_reinit_error=True)
+  # Print args changed from script running level
+  print("#"*120)
+  print(f"Current time is: {datetime.datetime.now()}")
+  print(f"Parameters used: substrate {args.exp}, num_workers/cpu {args.num_workers}, num_gpus {args.num_gpus}, seed {args.seed} ")
+  print("#"*120)
 
-  # Register meltingpot environment
-  registry.register_env("meltingpot", make_envs.env_creator)
 
   # Initialize default configurations for native RLlib algorithms
   if args.algo == "ppo":
      trainer = "PPO"
      default_config = ppo.PPOConfig()
+  elif args.algo == "a3c":
+      trainer = "A3C"
+      default_config = a3c.A3CConfig()
   else:
      print('The selected option is not tested. You may encounter issues if you use the baseline \
            policy configurations with non-tested algorithms')
-
+     
   # Fetch experiment configurations
   configs, exp_config, tune_config = get_experiment_config(args, default_config)
+
+  # Set up Ray. Use local mode for debugging. Ignore reinit error.
+  ray.init(num_cpus=configs.num_cpus,num_gpus=configs.num_gpus ,local_mode=args.local, ignore_reinit_error=True)
+
+  # Register meltingpot environment
+  registry.register_env("meltingpot", make_envs.env_creator)
   
   # Ensure GPU is available if set to True
   if configs.num_gpus > 0:
@@ -145,6 +156,8 @@ if __name__ == "__main__":
             group=wandb_group,
             api_key=os.environ["WANDB_API_KEY"],
             log_config=True,
+            upload_checkpoints=True,
+            
         )
     ]
   else:
@@ -161,9 +174,12 @@ if __name__ == "__main__":
 
 
   # Setup checkpointing configurations
-  ckpt_config = air.CheckpointConfig(num_to_keep=exp_config['keep'], checkpoint_frequency=exp_config['freq'], 
-                                     checkpoint_at_end=exp_config['end'])
-
+  ckpt_config = air.CheckpointConfig(num_to_keep=exp_config['keep'],
+                                     checkpoint_frequency=exp_config['freq'], 
+                                     checkpoint_at_end=exp_config['end'],
+                                     # adding more checkpoint options
+                                     checkpoint_score_attribute=exp_config['checkpoint_score_attribute'],
+                                     checkpoint_score_order=exp_config['checkpoint_score_order'],)
   # Run Trials
   results = tune.Tuner(
       trainer,
@@ -176,4 +192,9 @@ if __name__ == "__main__":
   print(best_result)
   
   ray.shutdown()
+  # Print args changed from script running level
+  print("#"*120)
+  print(f"Run finished. Current time is: {datetime.datetime.now()}")
+  print(f"Parameters used: substrate {args.exp}, num_workers/cpu {args.num_workers}, num_gpus {args.num_gpus}, seed {args.seed} ")
+  print("#"*120)
 
