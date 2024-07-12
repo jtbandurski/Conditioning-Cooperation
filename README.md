@@ -2,9 +2,9 @@
 
 This repository contains codebase and results used in my Master's thesis titled:
 
-Conditioning cooperation  with property rights in Multi-agent Reinforcement Learning tragedy of the commons setting
+*Conditioning cooperation  with property rights in Multi-agent Reinforcement Learning tragedy of the commons setting*
 
-This is a fork of Melting Pot Contest @ Neurips 2023 repository, which was very helpful to start raining agents.
+This is a fork of Melting Pot Contest @ Neurips 2023 repository, which was very helpful to start training agents. The computations were run on AWS and WandB was used to track the experiments. 
 
 ## Baselines
 
@@ -16,7 +16,7 @@ This subdirectory contains evaluation scors from all simulations as well as vide
 
 ## Meltingpot
 
-This subdirectory contains all the necessary fiels from the Melting Pot library. This is where the new designs of the envrionments are located.
+This subdirectory contains all the necessary fiels from the Melting Pot library. This is where the new designs of the envrionments are located. The new envrionments are called commons_harvest__private, commons_harvest__collective and commons_harvest__tragedy_test.
 
 ## Ray pathes
 
