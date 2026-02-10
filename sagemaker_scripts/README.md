@@ -22,17 +22,18 @@ export AWS_DEFAULT_REGION="eu-central-1"
 ### 3. Zbuduj i wypchnij obraz Docker
 
 ```bash
-# Pierwszy raz - zbuduj obraz
-python sagemaker/launch_training.py --build-image --dry-run
+# Pierwszy raz - zbuduj obraz i wypchnij do ECR
+python sagemaker_scripts/launch_training.py --build-image --exp private --seed 123
 
-# To stworzy obraz w ECR
+# Lub tylko zbuduj obraz (dry-run nie uruchomi treningu, ale zbuduje obraz)
+python sagemaker_scripts/launch_training.py --build-image --dry-run --exp private
 ```
 
 ### 4. Uruchom pojedynczy eksperyment
 
 ```bash
 # Eksperyment "private" z seed=123
-python sagemaker/launch_training.py \
+python sagemaker_scripts/launch_training.py \
     --exp private \
     --seed 123 \
     --image-uri <twój-ecr-uri>
@@ -42,7 +43,7 @@ python sagemaker/launch_training.py \
 
 ```bash
 # Uruchomi 10 eksperymentów (2 środowiska × 5 seedów)
-python sagemaker/launch_training.py \
+python sagemaker_scripts/launch_training.py \
     --run-all \
     --image-uri <twój-ecr-uri> \
     --budget 1000
@@ -52,23 +53,25 @@ python sagemaker/launch_training.py \
 
 ```bash
 # Sprawdź status wszystkich jobów
-python sagemaker/monitor_jobs.py --status
+python sagemaker_scripts/monitor_jobs.py --status --region eu-central-1
 
 # Pobierz wyniki ukończonych eksperymentów
-python sagemaker/monitor_jobs.py --download --output-dir ./results_sagemaker
+python sagemaker_scripts/monitor_jobs.py --download --output-dir ./results_sagemaker --region eu-central-1
 
 # Zatrzymaj wszystkie joby (awaryjnie)
-python sagemaker/monitor_jobs.py --stop-all
+python sagemaker_scripts/monitor_jobs.py --stop-all --region eu-central-1
 ```
 
 ## Struktura plików
 
 ```
-sagemaker/
+sagemaker_scripts/
 ├── Dockerfile              # Obraz Docker dla SageMaker
 ├── train_sagemaker.py      # Skrypt treningowy (entry point)
 ├── launch_training.py      # Launcher eksperymentów
 ├── monitor_jobs.py         # Monitorowanie i pobieranie wyników
+├── requirements-docker.txt # Zależności dla obrazu Docker
+├── requirements-sagemaker.txt # Zależności lokalne (boto3, sagemaker)
 └── README.md               # Ta dokumentacja
 ```
 
@@ -103,7 +106,7 @@ Dashboard: https://wandb.ai/twój-username/meltingpot-sagemaker
 ### "No SageMaker execution role"
 ```bash
 # Podaj ARN roli ręcznie
-python sagemaker/launch_training.py --role arn:aws:iam::123456789012:role/SageMakerRole ...
+python sagemaker_scripts/launch_training.py --role arn:aws:iam::123456789012:role/SageMakerRole ...
 ```
 
 ### "Docker build failed"

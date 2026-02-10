@@ -126,7 +126,9 @@ def launch_single_experiment(
 ):
     """Launch a single SageMaker training job"""
     
-    job_name = f"meltingpot-{exp_name}-seed{seed}-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+    # SageMaker job names only allow alphanumeric and hyphens, max 63 chars
+    safe_exp_name = exp_name.replace("_", "-")
+    job_name = f"meltingpot-{safe_exp_name}-seed{seed}-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
     output_path = f"s3://{s3_bucket}/meltingpot-results/{exp_name}/seed_{seed}"
     
     hyperparameters = {
@@ -157,6 +159,9 @@ def launch_single_experiment(
         print("DRY RUN - Job not submitted")
         return None
     
+    # Use safe name for base_job_name too
+    safe_exp_name = exp_name.replace("_", "-")
+    
     estimator = Estimator(
         image_uri=image_uri,
         role=role,
@@ -166,7 +171,7 @@ def launch_single_experiment(
         hyperparameters=hyperparameters,
         environment=environment,
         max_run=24 * 60 * 60,  # 24 hours max
-        base_job_name=f"meltingpot-{exp_name}",
+        base_job_name=f"meltingpot-{safe_exp_name}",
     )
     
     estimator.fit(wait=False)  # Don't wait, launch async
