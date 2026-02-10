@@ -450,7 +450,6 @@ def create_avatar_object(player_idx: int,
                       "backward": 7/2, 
                       "centered": True
                   },
-                  "fullObservations": False,
                   "useAbsoluteCoordinates": True,
                   "spriteMap": custom_sprite_map,
                   "randomizeInitialOrientation": False

@@ -31,7 +31,7 @@ DEFAULT_CONFIG = {
     "max_run_hours": 24,
     "s3_bucket": None,  # Will be auto-created if not provided
     "ecr_repository": "meltingpot-marl",
-    "region": "us-east-1",
+    "region": "eu-central-1",
 }
 
 # Experiment configurations for full study
@@ -96,8 +96,8 @@ def build_and_push_docker_image(repository_name, region):
     except ecr_client.exceptions.RepositoryAlreadyExistsException:
         print(f"ECR repository already exists: {repository_name}")
     
-    # Build image
-    subprocess.run(f"docker build -t {repository_name} -f sagemaker/Dockerfile .", shell=True, check=True)
+    # Build image for x86_64 (SageMaker runs on x86_64)
+    subprocess.run(f"docker build --platform linux/amd64 -t {repository_name} -f sagemaker_scripts/Dockerfile .", shell=True, check=True)
     
     # Tag and push
     subprocess.run(f"docker tag {repository_name}:latest {ecr_uri}:latest", shell=True, check=True)
@@ -245,7 +245,7 @@ def main():
     parser.add_argument("--instance-type", type=str, default="ml.g4dn.xlarge",
                        choices=list(INSTANCE_COSTS.keys()))
     parser.add_argument("--s3-bucket", type=str, help="S3 bucket for outputs")
-    parser.add_argument("--region", type=str, default="us-east-1")
+    parser.add_argument("--region", type=str, default="eu-central-1")
     
     # Training configuration
     parser.add_argument("--training-iterations", type=int, default=10000)
@@ -307,7 +307,7 @@ def main():
     
     # Save job manifest
     if jobs and not args.dry_run:
-        manifest_path = f"sagemaker/jobs_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        manifest_path = f"sagemaker_scripts/jobs_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         with open(manifest_path, "w") as f:
             json.dump(jobs, f, indent=2)
         print(f"\nJob manifest saved to: {manifest_path}")

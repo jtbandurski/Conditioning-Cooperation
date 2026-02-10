@@ -16,7 +16,7 @@ aws configure
 
 ```bash
 export WANDB_API_KEY="twój-klucz-wandb"
-export AWS_DEFAULT_REGION="us-east-1"
+export AWS_DEFAULT_REGION="eu-central-1"
 ```
 
 ### 3. Zbuduj i wypchnij obraz Docker
@@ -112,7 +112,7 @@ python sagemaker/launch_training.py --role arn:aws:iam::123456789012:role/SageMa
 docker info
 
 # Zaloguj się do ECR
-aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <account-id>.dkr.ecr.us-east-1.amazonaws.com
+aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin <account-id>.dkr.ecr.eu-central-1.amazonaws.com
 ```
 
 ### "Job failed - ResourceLimitExceeded"

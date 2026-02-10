@@ -1,0 +1,44 @@
+# Requirements for MeltingPot MARL Training Docker Image
+# These are the dependencies needed to run training on SageMaker
+
+# Core ML frameworks
+tensorflow==2.11.1
+tensorflow-probability==0.19.0
+torch==2.0.1
+numpy==1.24.3
+
+# JAX ecosystem (pinned for compatibility)
+jax==0.4.20
+jaxlib==0.4.20
+chex==0.1.7
+
+# Ray/RLLib for distributed training
+ray[all]==2.6.1
+
+# MeltingPot dependencies
+dm-env
+dm-tree
+ml-collections
+immutabledict
+
+# Deep learning utilities
+gymnasium
+pydantic==1.10.12
+
+# Data processing
+pandas
+networkx
+
+# Image processing
+opencv-python
+
+# Visualization (needed for rendering)
+matplotlib
+pygame
+
+# Reactive extensions
+reactivex
+
+# Logging and monitoring
+wandb
+absl-py

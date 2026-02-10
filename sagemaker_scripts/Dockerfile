@@ -17,10 +17,11 @@ WORKDIR /opt/ml/code
 COPY . /opt/ml/code/
 
 # Install dmlab2d first (requires special handling)
-RUN SYSTEM_VERSION_COMPAT=0 pip install --no-cache-dir dmlab2d
+RUN pip install --no-cache-dir dmlab2d
 
-# Install project dependencies
-RUN pip install --no-cache-dir -e .
+# Install other dependencies from requirements file
+COPY sagemaker_scripts/requirements-docker.txt /tmp/requirements-docker.txt
+RUN pip install --no-cache-dir -r /tmp/requirements-docker.txt
 
 # Apply Ray patches
 RUN chmod +x ray_patch.sh && sh ray_patch.sh
@@ -32,4 +33,5 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # SageMaker expects the training script at this location
 ENV SAGEMAKER_PROGRAM=train_sagemaker.py
 
-ENTRYPOINT ["python", "sagemaker/train_sagemaker.py"]
+# Use shell form to ignore extra arguments SageMaker passes
+ENTRYPOINT ["/bin/bash", "-c", "python sagemaker_scripts/train_sagemaker.py"]

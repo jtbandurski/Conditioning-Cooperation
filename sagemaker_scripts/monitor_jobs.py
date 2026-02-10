@@ -200,7 +200,7 @@ def main():
     parser.add_argument("--stop-all", action="store_true", help="Stop all running jobs")
     parser.add_argument("--output-dir", type=str, default="./results_sagemaker")
     parser.add_argument("--name-contains", type=str, default="meltingpot")
-    parser.add_argument("--region", type=str, default="us-east-1")
+    parser.add_argument("--region", type=str, default="eu-central-1")
     
     args = parser.parse_args()
     
