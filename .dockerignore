@@ -1,0 +1,31 @@
+# Git
+.git/
+.gitignore
+
+# Evaluation results and data
+evaluations/
+
+# Previous training results
+results_train_aws/
+
+# Jupyter notebooks
+*.ipynb
+
+# Test files
+**/*_test.py
+
+# Python cache
+**/__pycache__/
+*.pyc
+*.pyo
+
+# Documentation
+LICENSE
+README.md
+sagemaker/README.md
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
