@@ -7,3 +7,4 @@ python sagemaker_scripts/launch_training.py \
      --role arn:aws:iam::257641256142:role/service-role/AmazonSageMakerAdminIAMExecutionRole \
 
      --image-uri 257641256142.dkr.ecr.eu-central-1.amazonaws.com/meltingpot-marl:latest
+     
