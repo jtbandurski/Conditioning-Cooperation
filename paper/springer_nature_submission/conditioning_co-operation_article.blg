@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99e (TeX Live 2026)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: conditioning_co-operation_article.aux
+The style file: sn-basic.bst
+Database file #1: bibliography.bib
+sn-basic.bst [2024/07/19 v1.1 bibliography style]
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+You've used 30 entries,
+            3567 wiz_defined-function locations,
+            964 strings with 12635 characters,
+and the built_in function-call counts, 22911 in all, are:
+= -- 2091
+> -- 956
+< -- 22
++ -- 380
+- -- 285
+* -- 1919
+:= -- 3389
+add.period$ -- 47
+call.type$ -- 30
+change.case$ -- 258
+chr.to.int$ -- 30
+cite$ -- 30
+duplicate$ -- 1698
+empty$ -- 1842
+format.name$ -- 379
+if$ -- 4790
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 206
+newline$ -- 99
+num.names$ -- 124
+pop$ -- 605
+preamble$ -- 1
+purify$ -- 223
+quote$ -- 0
+skip$ -- 600
+stack$ -- 0
+substring$ -- 1597
+swap$ -- 558
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 255
+warning$ -- 0
+while$ -- 131
+width$ -- 0
+write$ -- 358

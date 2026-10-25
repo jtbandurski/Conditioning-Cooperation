@@ -1,0 +1,165 @@
+\begin{thebibliography}{30}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{\url{https://doi.org/#1}}
+\providecommand{\eprint}[2][]{\url{#2}}
+ \bibcommenthead
+
+\bibitem[{Agapiou et~al.(2023)Agapiou, Vezhnevets, Duéñez-Guzmán, Matyas,
+  Mao, Sunehag, Köster, Madhushani, Kopparapu, Comanescu, Strouse, Johanson,
+  Singh, Haas, Mordatch, Mobbs, and Leibo}]{agapiou2023meltingpot20}
+Agapiou JP, Vezhnevets AS, Duéñez-Guzmán EA, et~al (2023) Melting pot 2.0.
+  \urlprefix\url{https://arxiv.org/abs/2211.13746},
+  {\href{https://arxiv.org/abs/2211.13746}{{arXiv:2211.13746}}}
+
+\bibitem[{Anderson et~al.(2003)Anderson, Huggins, and
+  Friedman}]{anderson2003property}
+Anderson TL, Huggins LE, Friedman M (2003) The property rights path to
+  sustainable development. Hoover Institution Press,
+  \urlprefix\url{https://www.dallasfed.org/-/media/Documents/research/pubs/ftc/andersonhuggins.pdf}
+
+\bibitem[{Baragwanath et~al.(2023)Baragwanath, Bayi, and
+  Shinde}]{Baragwanath2023}
+Baragwanath K, Bayi E, Shinde N (2023) Collective property rights lead to
+  secondary forest growth in the brazilian amazon. Proceedings of the National
+  Academy of Sciences 120(22). \doi{10.1073/pnas.2221346120}
+
+\bibitem[{Barto et~al.(1983)Barto, Sutton, and Anderson}]{barto1983}
+Barto AG, Sutton RS, Anderson CW (1983) Neuronlike adaptive elements that can
+  solve difficult learning control problems. IEEE Transactions on Systems, Man,
+  and Cybernetics SMC-13(5):834--846. \doi{10.1109/TSMC.1983.6313077}
+
+\bibitem[{Bostrom and Yudkowsky(2018)}]{Bostrom2018}
+Bostrom N, Yudkowsky E (2018) The Ethics of Artificial Intelligence, Chapman
+  and Hall/CRC, p 57–69. \doi{10.1201/9781351251389-4}
+
+\bibitem[{Brekke et~al.(2007)Brekke, {\O}ksendal, and
+  Stenseth}]{brekke2007effect}
+Brekke KA, {\O}ksendal B, Stenseth NC (2007) The effect of climate variations
+  on the dynamics of pasture--livestock interactions under cooperative and
+  noncooperative management. Proceedings of the National Academy of Sciences
+  104(37):14730--14734. \doi{10.1073/pnas.0706553104}
+
+\bibitem[{Brunner and Munzel(2000)}]{Brunner2000}
+Brunner E, Munzel U (2000) The nonparametric behrens-fisher problem: Asymptotic
+  theory and a small-sample approximation. Biometrical Journal 42(1):17–25.
+  \doi{10.1002/(sici)1521-4036(200001)42:1<17::aid-bimj17>3.0.co;2-u}
+
+\bibitem[{Clark(1974)}]{clark1974mathematical}
+Clark CW (1974) Mathematical bioeconomics. In: Mathematical Problems in
+  Biology: Victoria Conference, Springer, pp 29--45,
+  \doi{10.1007/978-3-642-45455-4_3}
+
+\bibitem[{Dixon and Mood(1946)}]{Dixon1946}
+Dixon WJ, Mood AM (1946) The statistical sign test. Journal of the American
+  Statistical Association 41(236):557--566.
+  \doi{10.1080/01621459.1946.10501898}
+
+\bibitem[{Filar and Vrieze(1996)}]{Filar1996}
+Filar J, Vrieze K (1996) Competitive Markov Decision Processes. Springer New
+  York, \doi{10.1007/978-1-4612-4054-9}
+
+\bibitem[{Hardin(1968)}]{hardin1968tragedy}
+Hardin G (1968) The tragedy of the commons. hardin and baden (eds) managing the
+  commons. \doi{10.1126/science.162.3859.1243}
+
+\bibitem[{Haydaroğlu(2015)}]{Haydarolu2015}
+Haydaroğlu C (2015) The relationship between property rights and economic
+  growth: an analysis of oecd and eu countries. DANUBE: Law and Economics
+  Review 6(4):217–239. \doi{10.1515/danb-2015-0014}
+
+\bibitem[{Hughes et~al.(2018)Hughes, Leibo, Phillips, Tuyls, Due\~{n}ez Guzman,
+  Garc\'{\i}a Casta\~{n}eda, Dunning, Zhu, McKee, Koster, Roff, and
+  Graepel}]{Hughes2018}
+Hughes E, Leibo JZ, Phillips M, et~al (2018) Inequity aversion improves
+  cooperation in intertemporal social dilemmas. In: Bengio S, Wallach H,
+  Larochelle H, et~al (eds) Advances in Neural Information Processing Systems,
+  vol~31. Curran Associates, Inc., \doi{10.48550/arXiv.1803.08884}
+
+\bibitem[{Jaffe and Louziotis(1996)}]{Jaffe1996}
+Jaffe AJ, Louziotis D (1996) Property rights and economic efficiency: A survey
+  of institutional factors. Journal of Real Estate Literature 4(2):137--159.
+  \doi{10.1080/10835547.1996.12090055}
+
+\bibitem[{Janssen et~al.(2010)Janssen, Holahan, Lee, and Ostrom}]{Janssen2010}
+Janssen MA, Holahan R, Lee A, et~al (2010) Lab experiments for the study of
+  social-ecological systems. Science 328(5978):613–617.
+  \doi{10.1126/science.1183532}
+
+\bibitem[{Johanson et~al.(2022)Johanson, Hughes, Timbers, and
+  Leibo}]{Johanson2022}
+Johanson MB, Hughes E, Timbers F, et~al (2022) Emergent bartering behaviour in
+  multi-agent reinforcement learning. \doi{10.48550/ARXIV.2205.06760}
+
+\bibitem[{Leibo et~al.(2021)Leibo, Duéñez-Guzmán, Vezhnevets, Agapiou,
+  Sunehag, Koster, Matyas, Beattie, Mordatch, and Graepel}]{Leibo2021}
+Leibo JZ, Duéñez-Guzmán E, Vezhnevets AS, et~al (2021) Scalable evaluation
+  of multi-agent reinforcement learning with melting pot. arXiv:2107.06857,
+  \doi{10.48550/ARXIV.2107.06857}
+
+\bibitem[{Levene(1960)}]{levene1960}
+Levene H (1960) Robust tests for equality of variances. In: Hotelling; IOH,
+  et~al (eds) Contributions to Probability and Statistics: Essays in Honor of
+  Harold Hotelling. Stanford University Press, Stanford, CA, p 278--292
+
+\bibitem[{Maldonado and Moreno-Sanchez(2016)}]{Maldonado2016}
+Maldonado JH, Moreno-Sanchez RdP (2016) Exacerbating the tragedy of the
+  commons: Private inefficient outcomes and peer effect in experimental games
+  with fishing communities. PLOS ONE 11(2):e0148403.
+  \doi{10.1371/journal.pone.0148403}
+
+\bibitem[{Mann and Whitney(1947)}]{Mann1947}
+Mann HB, Whitney DR (1947) On a test of whether one of two random variables is
+  stochastically larger than the other. The Annals of Mathematical Statistics
+  18(1):50–60. \doi{10.1214/aoms/1177730491}
+
+\bibitem[{Montero(2022)}]{montero2022cooperative}
+Montero E (2022) Cooperative property rights and development: Evidence from
+  land reform in el salvador. Journal of Political Economy 130(1):48--93.
+  \doi{10.1086/717042}
+
+\bibitem[{Ostrom(1990)}]{Ostrom1990}
+Ostrom E (1990) Governing the Commons: The Evolution of Institutions for
+  Collective Action. Cambridge University Press, \doi{10.1017/cbo9780511807763}
+
+\bibitem[{P{\'{e}}rolat et~al.(2017)P{\'{e}}rolat, Leibo, Zambaldi, Beattie,
+  Tuyls, and Graepel}]{Perolat2017}
+P{\'{e}}rolat J, Leibo JZ, Zambaldi V, et~al (2017) A multi-agent reinforcement
+  learning model of common-pool resource appropriation. In: Advances in Neural
+  Information Processing Systems, \doi{10.48550/arXiv.1707.06600}
+
+\bibitem[{Peysakhovich and Lerer(2017)}]{Peysakhovich2017}
+Peysakhovich A, Lerer A (2017) Prosocial learning agents solve generalized stag
+  hunts better than selfish ones. In: Adaptive Agents and Multi-Agent Systems,
+  \doi{10.65109/gjmu5715}
+
+\bibitem[{Schulman et~al.(2017)Schulman, Wolski, Dhariwal, Radford, and
+  Klimov}]{Schulman2017}
+Schulman J, Wolski F, Dhariwal P, et~al (2017) Proximal policy optimization
+  algorithms. CoRR abs/1707.06347.
+  \urlprefix\url{http://arxiv.org/abs/1707.06347},
+  {\href{https://arxiv.org/abs/1707.06347}{{1707.06347}}}
+
+\bibitem[{Shapiro and Wilk(1965)}]{Shapiro1965}
+Shapiro SS, Wilk MB (1965) An analysis of variance test for normality (complete
+  samples). Biometrika 52(3/4):591. \doi{10.2307/2333709}
+
+\bibitem[{Shapley(1953)}]{Shapley1953}
+Shapley LS (1953) Stochastic games. Proceedings of the National Academy of
+  Sciences 39(10):1095–1100. \doi{10.1073/pnas.39.10.1095}
+
+\bibitem[{Wilcoxon(1945)}]{Wilcoxon1945}
+Wilcoxon F (1945) Individual comparisons by ranking methods. Biometrics
+  Bulletin 1(6):80. \doi{10.2307/3001968}
+
+\bibitem[{Willis et~al.(2023)Willis, Du, Leibo, and Luck}]{Willis2023a}
+Willis R, Du Y, Leibo JZ, et~al (2023) Resolving social dilemmas with minimal
+  reward transfer. \doi{10.48550/ARXIV.2310.12928}
+
+\bibitem[{Zhang et~al.(2021)Zhang, Yang, and Başar}]{Zhang2021}
+Zhang K, Yang Z, Başar T (2021) Multi-Agent Reinforcement Learning: A
+  Selective Overview of Theories and Algorithms, Springer International
+  Publishing, p 321–384. \doi{10.1007/978-3-030-60990-0_12}
+
+\end{thebibliography}
