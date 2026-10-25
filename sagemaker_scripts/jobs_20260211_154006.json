@@ -1,0 +1,9 @@
+[
+  {
+    "job_name": "meltingpot-tragedy-test-seed123-20260211-154005",
+    "exp": "tragedy_test",
+    "seed": 123,
+    "output_path": "s3://sagemaker-eu-central-1-257641256142/meltingpot-results/tragedy_test/seed_123",
+    "status": "launched"
+  }
+]
